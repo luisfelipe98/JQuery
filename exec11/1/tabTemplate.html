@@ -1,0 +1,210 @@
+<!Doctype html>
+<html>
+	<head>
+
+		<style>
+			.selecionado {
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+			<div id="tab" style="margin-top: 20px;">
+					<div style="width: 550px; border: 1px solid darkgreen; height: 25px;">
+						<div id="tabButton1" style="width: 50px; height: 25px; border: 1px solid black; float: left; cursor: pointer;" >
+							tab 1
+						</div>
+						<div id="tabButton2" style="width: 50px; height: 25px; border: 1px solid black; float: left; cursor: pointer;" >
+							tab 2
+						</div>
+						<div id="tabButton3" style="width: 50px; height: 25px; border: 1px solid black; float: left; cursor: pointer;">
+							tab 3
+						</div>
+					</div>
+					<div style="clear: both;"> </div>
+					<div style="width: 550px; border: 1px solid darkgreen; height: 400px;">
+						<div id="tabContent1" style="overflow: auto; width: 540px; height: 390px; border: 1px solid red; display: block;">
+							conteudo tab1
+						</div>
+						<div id="tabContent2" style="overflow: auto; width: 540px; height: 390px;  border: 1px solid green; display: none;"  >
+							conteudo tab2
+						</div>
+						<div id="tabContent3" style="overflow: auto; width: 540px; height: 390px; border: 1px solid blue; display: none;" >
+							conteudo tab3
+						</div>
+					</div>
+				</div>
+				
+				
+				<div id="tab2" style="margin-top: 20px;">
+					<div style="width: 550px; border: 1px solid darkgreen; height: 25px;">
+						<div id="tabButton4" style="width: 50px; height: 25px; border: 1px solid black; float: left; cursor: pointer;" >
+							tab 1
+						</div>
+						<div id="tabButton5" style="width: 50px; height: 25px; border: 1px solid black; float: left; cursor: pointer;" >
+							tab 2
+						</div>
+						<div id="tabButton6" style="width: 50px; height: 25px; border: 1px solid black; float: left; cursor: pointer;">
+							tab 3
+						</div>
+					</div>
+					<div style="clear: both;"> </div>
+					<div style="width: 550px; border: 1px solid darkgreen; height: 400px;">
+						<div id="tabContent4" style="overflow: auto; width: 540px; height: 390px; border: 1px solid red; display: block;">
+							conteudo tab1
+						</div>
+						<div id="tabContent5" style="overflow: auto; width: 540px; height: 390px;  border: 1px solid green; display: none;"  >
+							conteudo tab2
+						</div>
+						<div id="tabContent6" style="overflow: auto; width: 540px; height: 390px; border: 1px solid blue; display: none;" >
+							conteudo tab3
+						</div>
+					</div>
+				</div>
+
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script>
+
+
+		$("#tab").children().first ().children ().each ( function (i) {
+			var index = i;
+			$(this).click ( function () {
+
+				$("#tab").children ().eq (2).children ().hide ();
+				$("#tab").children ().eq (2).children ().eq (index).show ();
+			} );
+
+
+		}   );
+		
+		
+		$("#tab2").children().first ().children ().each ( function (i) {
+			var index = i;
+			$(this).click ( function () {
+
+				$("#tab2").children ().eq (2).children ().hide ();
+				$("#tab2").children ().eq (2).children ().eq (index).show ();
+			} );
+
+
+		}   );
+
+		
+		
+		$("#tabButton1").click( function() {
+			
+			$.ajax("SenacTab?tabId=1&tabNumber=0") 
+			
+				   .done( function(data) {
+					
+						$("#tabContent1").html(data);
+						$("#tabContent2, #tabContent3").hide();
+					
+					})
+					
+					.fail(function() {
+						
+						alert( "We have a problem" );
+					
+					})
+
+			})
+		
+		$("#tabButton2").click( function() {
+			
+			$.ajax("SenacTab?tabId=1&tabNumber=1") 
+			
+				   .done( function(data) {
+					
+						$("#tabContent2").html(data);
+						$("#tabContent1, #tabContent3").hide();
+					
+					})
+					
+					.fail(function() {
+						
+						alert( "We have a problem" );
+					
+					})
+
+			})
+		
+		$("#tabButton3").click( function() {
+			
+			$.ajax("SenacTab?tabId=1&tabNumber=2") 
+			
+				   .done( function(data) {
+					
+						$("#tabContent3").html(data);
+						$("#tabContent1, #tabContent2").hide();
+					
+					})
+					
+					.fail(function() {
+						
+						alert( "We have a problem" );
+					
+					})
+
+			})
+		
+		$("#tabButton4").click( function() {
+			
+			$.ajax("SenacTab?tabId=2&tabNumber=0") 
+			
+				   .done( function(data) {
+					
+						$("#tabContent4").html(data);
+						$("#tabContent5, #tabContent6").hide();
+					
+					})
+					
+					.fail(function() {
+						
+						alert( "We have a problem" );
+					
+					})
+
+			})
+		
+		$("#tabButton5").click( function() {
+			
+			$.ajax("SenacTab?tabId=2&tabNumber=1") 
+			
+				   .done( function(data) {
+					
+						$("#tabContent5").html(data);
+						$("#tabContent4, #tabContent6").hide();
+					
+					})
+					
+					.fail(function() {
+						
+						alert( "We have a problem" );
+					
+					})
+
+			})
+		
+		$("#tabButton6").click( function() {
+			
+			$.ajax("SenacTab?tabId=2&tabNumber=2") 
+			
+				   .done( function(data) {
+					
+						$("#tabContent6").html(data);
+						$("#tabContent4, #tabContent5").hide();
+					
+					})
+					
+					.fail(function() {
+						
+						alert( "We have a problem" );
+					
+					})
+
+			})
+
+	</script>
+	</body>
+</html>

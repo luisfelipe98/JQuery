@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Exercicio 3</title>
+</head>
+
+<body>
+	
+	<div id="main">
+		<input type="text" name="input1">
+		<input type="text" name="input2">
+		<input type="text" name="input3">
+		<input type="button">
+		<input type="button">
+		<input type="button">
+	</div>
+	
+</body>
+	
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+      
+	  <script>
+      		
+		$("#main[id]").css("border-bottom", "1px solid black");
+		  
+		$("input[type='text']").css("border", "3px solid green");  
+		  
+		$("input[type!='text']").css("border", "3px solid red");  
+		  
+		$("div[id^='m']").css("border-top", "1px solid brown");  
+		  
+		$("input[type$='t']").css("background-color", "yellow");  
+		  
+		$("input[type*='b']").css("background", "darkblue");  
+
+      </script>
+	
+</html>

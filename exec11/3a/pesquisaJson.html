@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+</head>
+<body>
+    <label for="nome_aluno">Digite o nome do aluno: </label>
+    <input id="nome" type="text" />
+	<button id="pesquisa">Pesquisar</button>
+	<h1></h1>
+	<ol></ol>
+    <script>
+	
+		$("#pesquisa").click( function() {
+		
+			var pesquisa = $("#nome").val();
+			var i;
+			
+				$.ajax("/Ajax/jsonArray?term="+pesquisa)
+		
+					.done( function(data){
+					
+						var obj = jQuery.parseJSON(data);
+						
+						$("h1").append("Encontramos "+obj.length+" resultados para '"+pesquisa+"'");
+						
+						for (i = 0; i < obj.length; i++) {
+						
+							$("ol").append("<li>"+obj[i]+"</li>")
+						
+						}
+						
+					})
+					
+					.fail( function() {
+					
+						alert("We have a problem");
+					
+					})
+		
+		})
+	
+    </script>
+</body>
+</html>

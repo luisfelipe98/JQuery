@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+	
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	
+<meta charset="utf-8">
+<title>Documento sem título</title>
+</head>
+
+<body>
+	
+	<p><input id="cli" type="submit" value="Botão 1"></p>
+	<p><input id="cli1" type="submit" value="Botão 2"></p>
+	
+</body>
+	
+	<script>
+	
+	$("#cli").click(function(){
+		
+		alert("Clickou");
+		
+	})
+		
+	$("#cli1").click(function(){
+		
+		$("#cli").trigger("click");
+		
+	});	
+		
+	</script>
+	
+</html>

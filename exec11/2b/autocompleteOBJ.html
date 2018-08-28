@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+</head>
+<body>
+    <label for="cursos">Digite o nome do aluno: </label>
+    <input id="cursos" type="text" />
+    <script>
+	
+        $(document).ready(function () {
+			
+			var nomes = [];
+			
+			$.ajax("/Ajax/jsonObject")
+			
+				.done( function(data){
+				
+					var obj = jQuery.parseJSON(data)
+					
+					var i;		
+					
+					for (i = 0; i < obj.length; i++){
+					
+						nomes[i] = obj[i].name;
+				
+					}
+				
+				})
+				
+				.fail(function(){
+				
+					alert("We have a problem")
+					
+				})
+		
+            $("input").autocomplete({
+				source: nomes    
+            });
+        });
+    </script>
+</body>
+</html>

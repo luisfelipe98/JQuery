@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		
+		<style>
+		
+			.selecionado {
+				
+				border: 3px solid green;
+				
+			}
+		
+		</style>
+		
+		<div id="div1" class="selecionado">
+		
+			<p>Hoje</p>
+		
+		</div>
+	
+		<div id="div2">
+		
+			<p>Ontem</p>
+		
+		</div>
+		
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script>
+			
+			$("#div1").removeClass("selecionado");
+			$("#div2").addClass("selecionado");
+
+		</script>
+
+	</body>
+</html>

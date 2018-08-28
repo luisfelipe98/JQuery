@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercicio 4b</title>
+	
+	<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+	
+	<style>
+		
+		.div{
+			
+			width: 200px;
+			height: 200px;
+			
+		}
+	
+	</style>
+</head>
+	
+<body>
+	<div class="div">
+		<span>Olá</span>
+		<span>Tudo</span>
+	</div>
+	<div class="div">
+		<span>Bem</span>
+		<span>Galera</span>
+	</div>
+	
+</body>
+	
+	<script>
+	
+		$(".div > span").css("border", "4px solid darkgreen");
+		
+	</script>
+	
+	
+</html>

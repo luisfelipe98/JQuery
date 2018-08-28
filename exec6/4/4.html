@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<style>
+			.selecionado {
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+	<div style="width: 150px">
+	<div style="float:left">
+		<div id="barraconteudo1" style="width: 150px; height: 25px; border: 1px solid black; float: left; cursor: pointer;" >
+			barra de conteudo 1
+		</div>
+		<div id="conteudo1" style="width: 150px; height: 200px; border: 1px solid black; display:none">
+			conteudo 1
+		</div>
+	</div>
+
+	<div style="float:left">
+		<div id="barraconteudo2" style="width: 150px; height: 25px; border: 1px solid black; float: left; cursor: pointer;" >
+			barra de conteudo 2
+		</div>
+		<div id="conteudo2" style="width: 150px; height: 200px; border: 1px solid black; display:none">
+			conteudo 2
+		</div>
+	</div>
+
+
+	<div style="float:left">
+		<div id="barraconteudo3" style="width: 150px; height: 25px; border: 1px solid black; float: left; cursor: pointer;" >
+			barra de conteudo 3
+		</div>
+		<div id="conteudo3" style="width: 150px; height: 200px; border: 1px solid black; display:none">
+			conteudo 3
+		</div>
+	</div>
+	</div>	
+	
+
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script>
+
+	$("#barraconteudo1").click(function() {
+		
+		if($("#conteudo1").is(":visible")) {
+		   	
+			$("#conteudo1").hide("slow");
+			
+		} else {
+			
+			$("#conteudo1").show("slow");
+			$("#conteudo2").hide("slow");
+			$("#conteudo3").hide("slow");
+			
+		}
+		
+	});	
+		
+	$("#barraconteudo2").click(function() {
+		
+		if($("#conteudo2").is(":visible")) {
+			
+			$("#conteudo2").slideUp("slow");
+			
+		}else{
+			
+			$("#conteudo1").hide("slow");
+			$("#conteudo2").slideDown("slow");
+			$("#conteudo3").hide("slow");
+		}
+		
+	});	
+		
+	$("#barraconteudo3").click(function() {
+		
+		if($("#conteudo3").is(":visible")) {
+			
+			$("#conteudo3").fadeOut("slow");
+			
+		}else {
+			
+			$("#conteudo1").hide("slow");
+			$("#conteudo2").hide("slow");
+			$("#conteudo3").fadeIn("slow");
+			
+		}
+		
+		
+		
+		
+	});	
+
+		
+
+	</script>
+	</body>
+</html>

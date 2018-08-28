@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Documento sem título</title>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+</head>
+
+<body>
+	
+	<div id="body">
+		<p>Paragrafo 1</p>
+		<p>Paragrafo 2</p>
+		<p>Paragrafo 3</p>
+		
+			<div>
+				<div>
+					<p>Paragrafo 4</p>
+				</div>
+			</div>
+	</div>
+	
+	<script>
+	
+		$("#body").children("p").css("color", "green");
+		
+		$("#body").find("p").css("border", "1px solid brown");
+	
+	</script>
+	
+</body>
+</html>

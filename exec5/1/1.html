@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+	
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	
+<meta charset="utf-8">
+<title>Documento sem título</title>
+</head>
+
+<body>
+	
+	<p><input type="text" class="b"></p>
+	
+	<p><input type="text" class="c"></p>
+	
+	<p><input type="submit" class="click" value="Enviar"></p>
+	<p id="clickado"></p>
+	
+	<p><input type="submit" value="Duplo Clique" class="dblc"></p>
+	
+	<p><input type="submit" value="Foco" class="foco"></p>
+	<p id="textfoco"></p>
+	
+	<p><input type="text" class="k"></p>
+	
+	<p><input type="text" class="kp"></p>
+	
+	<p id="mouse">Mouse Up e Down</p>
+	
+	<p id="mouse2">Mouse</p>
+	
+	<p><img src="imagem.png"></p>
+	
+</body>
+	
+	<script>
+	
+	$(".b").blur(function(){
+		
+		alert("Perdeu o foco");
+		
+	});
+		
+	$(".c").change(function(){
+		
+		alert("Você mudou o value do input");
+		
+	});	
+		
+	$(".click").click(function(){
+		
+		$("#clickado").html("Botão Clickado");
+		
+	});		
+		
+	$(".dblc").dblclick(function(){
+		
+		alert("Você clicou duas vezes no botão");
+		
+	});		
+		
+	$(".foco").focus(function(){
+		
+		$("#textfoco").html("Você tem o foco do botão");
+		
+	});		
+		
+	$(".k").keydown(function(){
+		
+        $(".k").css("background-color", "blue");
+		
+    });
+		
+    $(".k").keyup(function(){
+		
+        $(".k").css("background-color", "red");
+		
+    });
+		
+	$(".kp").keypress(function(){
+		
+        alert("Você está pressionando uma tecla");
+		
+    });	
+		
+	$("#mouse").mouseup(function(){
+		
+        $(this).after("<p style='color:green;'>Mouse button released.</p>");
+		
+    });
+		
+    $("#mouse").mousedown(function(){
+		
+        $(this).after("<p style='color:purple;'>Mouse button pressed down.</p>");
+		
+    });	
+		
+	$("#mouse2").mouseout(function(){
+		
+		alert("Você saiu do p");
+		
+	});	
+		
+	$("#mouse2").mouseover(function(){
+		
+		alert("Você está sobre o p");
+		
+	});	
+		
+	$("#mouse2").mousemove(function(){
+		
+		alert("Você está se movendo no p");
+		
+	});	
+		
+	$("img").error(function(){
+		
+		$(this).attr("src", "x.jpg");
+		
+	});	
+		
+	</script>
+	
+</html>
